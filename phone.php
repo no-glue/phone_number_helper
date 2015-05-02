@@ -1,4 +1,6 @@
 <?php
+namespace Phone;
+
 class Phone {
   protected $instance;
   protected $number;

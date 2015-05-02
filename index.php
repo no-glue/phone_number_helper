@@ -2,7 +2,7 @@
 require "phone.php";
 require __DIR__."/vendor/autoload.php";
 
-$phone = new Phone(\libphonenumber\PhoneNumberUtil::getInstance());
+$phone = new \Phone\Phone(\libphonenumber\PhoneNumberUtil::getInstance());
 $numberOne = "+38640123456";
 $phone->setNumber($numberOne);
 $str = $phone->toString();
