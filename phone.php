@@ -1,11 +1,11 @@
 <?php
 class Phone {
   protected $instance;
-  protected $phone;
+  protected $number;
 
-  public function __construct($instance, $phone) {
+  public function __construct($instance, $number) {
     $this->instance = $instance;
-    $this->phone = $this->instance->parse($phone, "AD", null, true);
+    $this->number = $this->instance->parse($number, "AD", null, true);
   }
   public function setInstance($intance) {
     $this->intance = $intance;
@@ -13,23 +13,23 @@ class Phone {
   public function getInstance() {
     return $this->instance;
   }
-  public function setPhone($phone) {
-    $this->phone = $phone;
+  public function setNumber($number) {
+    $this->number = $this->instance->parse($number, "AD", null, true);
   }
-  public function getPhone() {
-    return $this->phone;
+  public function getNumber() {
+    return $this->number;
   }
   public function getRegion() {
-    return $this->instance->getRegionCodeForNumber($this->phone);
+    return $this->instance->getRegionCodeForNumber($this->number);
   }
   public function getCode() {
-    return $this->phone->getCountryCode();
+    return $this->number->getCountryCode();
   }
   public function getNationalNumber() {
-    return $this->phone->getNationalNumber();
+    return $this->number->getNationalNumber();
   }
   public function getType() {
-    return ($this->instance->getNumberType($this->phone)) ? "mobile" : "other";
+    return ($this->instance->getNumberType($this->number)) ? "mobile" : "other";
   }
   public function toString() {
     return strtolower($this->getRegion()).".".$this->getType().", ".$this->getCode().", ".$this->getNationalNumber().", ".$this->getRegion();
