@@ -3,9 +3,11 @@ class Phone {
   protected $instance;
   protected $number;
 
-  public function __construct($instance, $number) {
+  public function __construct($instance, $number = null) {
     $this->instance = $instance;
-    $this->number = $this->instance->parse($number, "AD", null, true);
+    if($number) {
+      $this->number = $this->instance->parse($number, "AD", null, true);
+    }
   }
   public function setInstance($intance) {
     $this->intance = $intance;
