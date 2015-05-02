@@ -6,3 +6,5 @@ php composer.phar install
 php index.php
 ### include
 require "phone.php"
+### rpc
+simple json rpc via call
