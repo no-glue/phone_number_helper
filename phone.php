@@ -28,6 +28,9 @@ class Phone {
   public function getNationalNumber() {
     return $this->phone->getNationalNumber();
   }
+  public function getType() {
+    return ($this->instance->getNumberType($this->phone)) ? "mobile" : "other";
+  }
   public function convert() {
   }
 };
