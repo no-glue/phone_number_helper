@@ -38,4 +38,7 @@ class Phone {
   public function toString() {
     return strtolower($this->getRegion()).".".$this->getType().", ".$this->getCode().", ".$this->getNationalNumber().", ".$this->getRegion();
   }
+  public function call($call) {
+    call_user_func_arraty(array($this, $call["method"]), $call["params"]);
+  }
 };
