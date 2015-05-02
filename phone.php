@@ -5,7 +5,7 @@ class Phone {
 
   public function __construct($instance, $phone) {
     $this->instance = $instance;
-    $this->phone = $phone;
+    $this->phone = $this->instance->parse($phone, "AD", null, true);
   }
   public function setInstance($intance) {
     $this->intance = $intance;
@@ -19,8 +19,14 @@ class Phone {
   public function getPhone() {
     return $this->phone;
   }
-  public function getRegionCode() {
+  public function getRegion() {
     return $this->instance->getRegionCodeForNumber($this->phone);
+  }
+  public function getCode() {
+    return $this->phone->getCountryCode();
+  }
+  public function getNationalNumber() {
+    return $this->phone->getNationalNumber();
   }
   public function convert() {
   }
