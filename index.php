@@ -7,3 +7,4 @@ echo "region ".$phone->getRegion()."\n";
 echo "code ".$phone->getCode()."\n";
 echo "national number ".$phone->getNationalNumber()."\n";
 echo "type ".$phone->getType()."\n";
+echo "to string ".$phone->toString()."\n";

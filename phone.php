@@ -31,6 +31,7 @@ class Phone {
   public function getType() {
     return ($this->instance->getNumberType($this->phone)) ? "mobile" : "other";
   }
-  public function convert() {
+  public function toString() {
+    return strtolower($this->getRegion()).".".$this->getType().", ".$this->getCode().", ".$this->getNationalNumber().", ".$this->getRegion();
   }
 };
